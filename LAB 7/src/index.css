@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --amazon-nav-bg: #131921;
+  --amazon-subnav-bg: #232f3e;
+  --amazon-yellow: #febd69;
+  --amazon-yellow-hover: #f3a847;
+  --amazon-btn-yellow: #ffd814;
+  --amazon-btn-yellow-hover: #f7ca00;
+  --amazon-orange: #ff9900;
+  --amazon-btn-orange: #ffa41c;
+  --amazon-btn-orange-hover: #fa8900;
+  --amazon-blue-link: #007185;
+  --amazon-blue-link-hover: #c7511f;
+  --amazon-bg-gray: #e3e6e6;
+  --amazon-card-bg: #ffffff;
+  --amazon-dark-text: #0f1111;
+  --amazon-secondary-text: #565959;
+  --amazon-green-stock: #007600;
+  --amazon-red-discount: #cc0c39;
+  --amazon-border-gray: #d5d9d9;
+  --amazon-prime-blue: #00a8e1;
+  
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--amazon-bg-gray);
+  color: var(--amazon-dark-text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--amazon-blue-link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--amazon-blue-link-hover);
+  text-decoration: underline;
+}
+
+button {
+  font-family: var(--font-family);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+input, select, textarea {
+  font-family: var(--font-family);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+/* Utility Classes */
+.btn-primary-yellow {
+  background-color: var(--amazon-btn-yellow);
+  color: var(--amazon-dark-text);
+  border: 1px solid #fcd200;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 2px 5px rgba(213,217,217,.5);
+}
+
+.btn-primary-yellow:hover {
+  background-color: var(--amazon-btn-yellow-hover);
+  border-color: #f2c200;
+}
+
+.btn-secondary-orange {
+  background-color: var(--amazon-btn-orange);
+  color: var(--amazon-dark-text);
+  border: 1px solid #ff8f00;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 2px 5px rgba(213,217,217,.5);
+}
+
+.btn-secondary-orange:hover {
+  background-color: var(--amazon-btn-orange-hover);
+}
+
+.btn-gray {
+  background: #e7e9ec;
+  border: 1px solid #adb1b8;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 13px;
+  color: #111;
+  transition: background 0.15s ease;
+}
+
+.btn-gray:hover {
+  background: #d9dce1;
+}
+
+/* Badge tags */
+.badge-discount {
+  background-color: var(--amazon-red-discount);
+  color: white;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.badge-prime {
+  color: var(--amazon-prime-blue);
+  font-weight: 800;
+  font-style: italic;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.badge-prime span {
+  color: var(--amazon-btn-orange);
+}
+
+.badge-best-seller {
+  background-color: #e67a00;
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%);
+  display: inline-block;
+}
+
+.badge-limited {
+  background-color: #7d1c8d;
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+
+/* Toast Animations */
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.toast-animated {
+  animation: slideInUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Container limits */
+.amazon-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Grid helper */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
